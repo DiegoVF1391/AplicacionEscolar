@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using TAP2021_U1T_Escuela.Clases;
 using TAP2021_U1T_Escuela;
 using TAP2021_U1T2_Aplicación_Escolar;
-
+//Diego 
 namespace TAP2021_U1T_Escuela
 {
     public partial class Form1 : Form
