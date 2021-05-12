@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAP2021_U1T_Escuela", "TAP2021_U1T2_Aplicación_Escolar\TAP2021_U1T_Escuela.csproj", "{CF46655C-84C2-4A21-91D5-E57CA4A67C97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF46655C-84C2-4A21-91D5-E57CA4A67C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF46655C-84C2-4A21-91D5-E57CA4A67C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF46655C-84C2-4A21-91D5-E57CA4A67C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF46655C-84C2-4A21-91D5-E57CA4A67C97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF13891A-CDAD-4394-A291-EE10A567875F}
+	EndGlobalSection
+EndGlobal
