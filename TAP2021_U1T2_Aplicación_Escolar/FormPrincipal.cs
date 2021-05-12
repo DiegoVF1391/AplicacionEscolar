@@ -87,5 +87,10 @@ namespace TAP2021_U1T_Escuela
 
             new Form1().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

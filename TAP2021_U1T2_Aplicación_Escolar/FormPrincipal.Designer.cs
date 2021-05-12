@@ -35,6 +35,7 @@ namespace TAP2021_U1T_Escuela
             this.btnDatos = new System.Windows.Forms.Button();
             this.labelSaludo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExamen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCalificaciones
@@ -114,12 +115,27 @@ namespace TAP2021_U1T_Escuela
             this.label1.TabIndex = 5;
             this.label1.Text = "Bienvenida ";
             // 
+            // btnExamen
+            // 
+            this.btnExamen.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExamen.ForeColor = System.Drawing.Color.Black;
+            this.btnExamen.Location = new System.Drawing.Point(51, 236);
+            this.btnExamen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExamen.Name = "btnExamen";
+            this.btnExamen.Size = new System.Drawing.Size(336, 36);
+            this.btnExamen.TabIndex = 6;
+            this.btnExamen.Text = "Realizar Examen en Linea";
+            this.btnExamen.UseVisualStyleBackColor = false;
+            this.btnExamen.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(448, 269);
+            this.ClientSize = new System.Drawing.Size(448, 309);
+            this.Controls.Add(this.btnExamen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelSaludo);
             this.Controls.Add(this.btnDatos);
@@ -144,5 +160,6 @@ namespace TAP2021_U1T_Escuela
         private System.Windows.Forms.Button btnDatos;
         private System.Windows.Forms.Label labelSaludo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnExamen;
     }
 }
