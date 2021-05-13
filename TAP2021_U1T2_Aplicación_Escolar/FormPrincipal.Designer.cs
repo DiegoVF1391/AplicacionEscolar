@@ -36,6 +36,7 @@ namespace TAP2021_U1T_Escuela
             this.labelSaludo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExamen = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCalificaciones
@@ -120,7 +121,7 @@ namespace TAP2021_U1T_Escuela
             this.btnExamen.BackColor = System.Drawing.Color.YellowGreen;
             this.btnExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnExamen.Location = new System.Drawing.Point(51, 236);
+            this.btnExamen.Location = new System.Drawing.Point(51, 269);
             this.btnExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamen.Name = "btnExamen";
             this.btnExamen.Size = new System.Drawing.Size(336, 36);
@@ -129,12 +130,22 @@ namespace TAP2021_U1T_Escuela
             this.btnExamen.UseVisualStyleBackColor = false;
             this.btnExamen.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(51, 233);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(336, 21);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(448, 309);
+            this.ClientSize = new System.Drawing.Size(448, 336);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnExamen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelSaludo);
@@ -161,5 +172,6 @@ namespace TAP2021_U1T_Escuela
         private System.Windows.Forms.Label labelSaludo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExamen;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

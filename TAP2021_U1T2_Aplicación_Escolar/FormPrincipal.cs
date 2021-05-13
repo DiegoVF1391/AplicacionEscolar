@@ -90,6 +90,32 @@ namespace TAP2021_U1T_Escuela
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //boton para entrar al formulario de examen, validar que se haya seleccionado 1 materia...
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            json = new JObject();
+            jsonRegistros = new JObject();
+
+            try
+            {
+                //buscar las materias que corresponden al alumno actual...
+                StreamReader sr = new StreamReader("registros.json");
+                String lectura = sr.ReadToEnd();
+                sr.Close();
+
+                json = JObject.Parse(lectura);
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al leer "+ex);
+                throw;
+            }
 
         }
     }
