@@ -69,6 +69,12 @@
     <Compile Include="FormDatos.Designer.cs">
       <DependentUpon>FormDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExamen.Designer.cs">
+      <DependentUpon>FormExamen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHorario.cs">
       <SubType>Form</SubType>
     </Compile>

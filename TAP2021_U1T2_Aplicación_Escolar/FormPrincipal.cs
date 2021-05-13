@@ -108,7 +108,7 @@ namespace TAP2021_U1T_Escuela
         {
             //boton para entrar al formulario de examen, validar que se haya seleccionado 1 materia...
 
-
+            new FormExamen().Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
