@@ -70,9 +70,25 @@ namespace TAP2021_U1T_Escuela
                         jArray = (JArray)jsonRegistros.GetValue("alumnos");
                         JObject alumno = (JObject)jArray[Form1.indice];
                         label1.Text = "Bienvenido: " + alumno.GetValue("Nombre").ToString() + " ";
+
+                        //revisar materias 
+                        if (alumno.ContainsKey("Materias"))
+                        {
+                            JArray materias = (JArray)alumno.GetValue("Materias");
+
+                            for (int i = 0; i < materias.Count; i++)
+                            {
+                                JObject m = (JObject)materias[i];
+                                comboBox1.Items.Add(m.GetValue("Nombre"));
+
+                            }
+
+                        }
                         
                     }
                 }
+
+               
             }
             catch (Exception ex)
             {

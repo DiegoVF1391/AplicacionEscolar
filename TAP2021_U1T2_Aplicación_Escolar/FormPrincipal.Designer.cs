@@ -121,7 +121,7 @@ namespace TAP2021_U1T_Escuela
             this.btnExamen.BackColor = System.Drawing.Color.YellowGreen;
             this.btnExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnExamen.Location = new System.Drawing.Point(51, 269);
+            this.btnExamen.Location = new System.Drawing.Point(51, 238);
             this.btnExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnExamen.Name = "btnExamen";
             this.btnExamen.Size = new System.Drawing.Size(336, 36);
@@ -133,7 +133,7 @@ namespace TAP2021_U1T_Escuela
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(51, 233);
+            this.comboBox1.Location = new System.Drawing.Point(51, 279);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(336, 21);
             this.comboBox1.TabIndex = 7;
