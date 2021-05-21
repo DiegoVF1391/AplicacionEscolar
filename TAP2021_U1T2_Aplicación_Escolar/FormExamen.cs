@@ -26,7 +26,9 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         private JObject jcarrera;
         private JArray jsemestre;
 
+        //guardar semestre y carrera
         private String car;
+        private int sem;
 
 
         //Formulario para hacer examen de acreditación
@@ -71,6 +73,12 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                             car = jalumno.GetValue("Carrera").ToString();
                             //MessageBox.Show(car);
                         }
+                        if (jalumno.ContainsKey("Semestre"))
+                        {
+                            jalumno = (JObject)jalumnos[Form1.indice];
+                            sem = (int)jalumno.GetValue("Semestre");
+                            MessageBox.Show("Semestre: "+sem );
+                        }
 
                     }
                 }
@@ -103,7 +111,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                     if (jcarrera.ContainsKey("Semestres"))
                                     {
                                         jsemestre = (JArray)jcarrera.GetValue("Semestres");
-                                        MessageBox.Show(jsemestre.ToString());
+                                        //MessageBox.Show(jsemestre.ToString());
 
                                     }
 
