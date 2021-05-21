@@ -56,6 +56,7 @@ namespace TAP2021_U1T_Escuela
             try
             {
                 StreamReader sr = new StreamReader("registros.json");
+                //archivo de las preguntas 
                 StreamReader sr2 = new StreamReader("Reticulas2.json");
                 String lectura = sr.ReadToEnd();
                 String lectura2 = sr2.ReadToEnd();
