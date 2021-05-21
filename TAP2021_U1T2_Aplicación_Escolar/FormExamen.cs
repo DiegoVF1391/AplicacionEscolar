@@ -34,8 +34,9 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         private JArray jaPreguntas;
         private JObject jPreguntaEx;
 
-        //guardar semestre y carrera
-        private String car;
+
+        //guardar semestre, respuesta y carrera
+        private String car, respuestaCorrecta;
         private int sem;
 
 
@@ -44,6 +45,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         {
             InitializeComponent();
         }
+
 
         //Cargar archivo de json para preguntas
         private void FormExamen_Load(object sender, EventArgs e)
@@ -142,19 +144,39 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                 //MessageBox.Show(jMateriaEx.GetValue("Nombre").ToString());
                                                                 if (jMateriaEx.GetValue("Nombre").ToString().Equals(FormPrincipal.materiaExamen.ToString()))
                                                                 {
-                                                                    MessageBox.Show("asdf");
                                                                     if (jMateriaEx.ContainsKey("Examen"))
                                                                     {
-                                                                        MessageBox.Show("Examen");
+                                                                        
                                                                         jaExamenes = (JArray)jMateriaEx.GetValue("Examen");
+                                                                        MessageBox.Show("Tiene "+jaExamenes.Count.ToString());
+                                                                        while ()
+                                                                        {
+
+                                                                        }
                                                                         for (int l = 0; l < jaExamenes.Count; l++)
                                                                         {
                                                                             jExamen = (JObject)jaExamenes[l];
                                                                             if (jExamen.ContainsKey("Pregunta"))
                                                                             {
-                                                                                MessageBox.Show("Test");
                                                                                 label1.Text = (String)jExamen.GetValue("Pregunta");
-                                                                                
+                                                                                respuestaCorrecta = (String)jExamen.GetValue("Correcta");
+                                                                                Console.WriteLine((String)jExamen.GetValue("Pregunta"));
+
+                                                                                if (jExamen.ContainsKey("Respuestas"))
+                                                                                {
+                                                                                    jaPreguntas = (JArray)jExamen.GetValue("Respuestas");
+                                                                                    for (int m = 0; m < jaPreguntas.Count; m++)
+                                                                                    {
+                                                                                        jPreguntaEx = (JObject)jaPreguntas[m];
+                                                                                        if (jPreguntaEx.ContainsKey("Texto"))
+                                                                                        {
+                                                                                            comboBox1.Items.Add(jPreguntaEx.GetValue("Inciso")+") "+jPreguntaEx.GetValue("Texto"));
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            else{
+                                                                                Console.WriteLine("No entro");
                                                                             }
                                                                         }
                                                                     }
