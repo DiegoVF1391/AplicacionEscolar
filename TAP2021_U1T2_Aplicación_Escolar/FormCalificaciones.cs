@@ -105,10 +105,6 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                 MessageBox.Show("Error al leer el archivo");
                 throw;
             }
-
-
-
-
         }
     }
 }
