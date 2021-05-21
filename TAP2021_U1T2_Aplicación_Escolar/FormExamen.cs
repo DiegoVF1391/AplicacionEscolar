@@ -112,6 +112,8 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                     {
                                         jsemestre = (JArray)jcarrera.GetValue("Semestres");
                                         //MessageBox.Show(jsemestre.ToString());
+                                        //revisar carreras y que el "numero" coincida con "sem"
+                                        
 
                                     }
 
