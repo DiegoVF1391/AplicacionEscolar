@@ -27,6 +27,13 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         private JArray jsemestre;
         private JObject jse;
 
+        private JArray jmaterias;
+        private JObject jMateriaEx;
+        private JArray jaExamenes;
+        private JObject jExamen;
+        private JArray jaPreguntas;
+        private JObject jPreguntaEx;
+
         //guardar semestre y carrera
         private String car;
         private int sem;
@@ -41,10 +48,11 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         //Cargar archivo de json para preguntas
         private void FormExamen_Load(object sender, EventArgs e)
         {
+            labelMateria.Text = FormPrincipal.materiaExamen;
             try
             {
                 StreamReader sr = new StreamReader("registros.json");
-                StreamReader sr2 = new StreamReader("Reticulas.json");
+                StreamReader sr2 = new StreamReader("Reticulas2.json");
                 String leer = sr.ReadToEnd();
                 String leer2 = sr2.ReadToEnd();
                 sr.Close();
@@ -84,13 +92,13 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                     }
                 }
 
-                MessageBox.Show(json2.ToString());
+                //MessageBox.Show(json2.ToString());
 
                 //revisar reticulas.... Para entrar a las preguntas
                 if (json2.ContainsKey("Reticula"))
                 {
                     jr = (JObject)json2.GetValue("Reticula");
-                    MessageBox.Show(jr.ToString());
+                    //MessageBox.Show(jr.ToString());
 
                     //revisar carrera 
                     if (jr.ContainsKey("Carreras"))
@@ -123,6 +131,36 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                 if (sem == int.Parse(jse.GetValue("Numero").ToString()))
                                                 {
                                                     MessageBox.Show("Valor "+ sem);
+                                                    if (jse.ContainsKey("Materias"))
+                                                    {
+                                                        jmaterias = (JArray)jse.GetValue("Materias");
+                                                        for (int k = 0; k < jmaterias.Count; k++)
+                                                        {
+                                                            jMateriaEx = (JObject)jmaterias[k];
+                                                            if (jMateriaEx.ContainsKey("Nombre"))
+                                                            {
+                                                                //MessageBox.Show(jMateriaEx.GetValue("Nombre").ToString());
+                                                                if (jMateriaEx.GetValue("Nombre").ToString().Equals(FormPrincipal.materiaExamen.ToString()))
+                                                                {
+                                                                    MessageBox.Show("asdf");
+                                                                    if (jMateriaEx.ContainsKey("Examen"))
+                                                                    {
+                                                                        MessageBox.Show("Examen");
+                                                                        jaExamenes = (JArray)jMateriaEx.GetValue("Examen");
+                                                                        for (int l = 0; l < jaExamenes.Count; l++)
+                                                                        {
+                                                                            jExamen = (JObject)jaExamenes[l];
+                                                                            if (jExamen.ContainsKey("Pregunta"))
+                                                                            {
+                                                                                MessageBox.Show("Test");
+                                                                                label1.Text = (string)jExamen.GetValue("Pregunta");
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
