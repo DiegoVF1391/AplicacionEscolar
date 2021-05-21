@@ -12,6 +12,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
 {
     public partial class FormExamen : Form
     {
+        //Formulario para hacer examen de acreditación
         public FormExamen()
         {
             InitializeComponent();
