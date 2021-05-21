@@ -17,5 +17,11 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         {
             InitializeComponent();
         }
+
+        //Cargar archivo de json para preguntas
+        private void FormExamen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

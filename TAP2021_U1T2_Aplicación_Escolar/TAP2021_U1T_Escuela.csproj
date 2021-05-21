@@ -110,6 +110,9 @@
     <EmbeddedResource Include="FormDatos.resx">
       <DependentUpon>FormDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExamen.resx">
+      <DependentUpon>FormExamen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHorario.resx">
       <DependentUpon>FormHorario.cs</DependentUpon>
     </EmbeddedResource>
