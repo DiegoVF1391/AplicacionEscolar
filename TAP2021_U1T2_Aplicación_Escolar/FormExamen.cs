@@ -88,7 +88,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                         {
                             jalumno = (JObject)jalumnos[Form1.indice];
                             sem = (int)jalumno.GetValue("Semestre");
-                            MessageBox.Show("Semestre: "+sem );
+                            //MessageBox.Show("Semestre: "+sem );
                         }
 
                     }
@@ -132,7 +132,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                             {
                                                 if (sem == int.Parse(jse.GetValue("Numero").ToString()))
                                                 {
-                                                    MessageBox.Show("Valor "+ sem);
+                                                    //MessageBox.Show("Valor "+ sem);
                                                     if (jse.ContainsKey("Materias"))
                                                     {
                                                         jmaterias = (JArray)jse.GetValue("Materias");
@@ -148,7 +148,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                     {
                                                                         
                                                                         jaExamenes = (JArray)jMateriaEx.GetValue("Examen");
-                                                                        MessageBox.Show("Tiene "+jaExamenes.Count.ToString());
+                                                                        //MessageBox.Show("Tiene "+jaExamenes.Count.ToString());
                                                                         
                                                                         
                                                                             jExamen = (JObject)jaExamenes[cont];
@@ -159,7 +159,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
 
                                                                                 label1.Text = (String)jExamen.GetValue("Pregunta");
                                                                                 inciso = (String)jExamen.GetValue("Correcta");
-                                                                                Console.WriteLine((String)jExamen.GetValue("Pregunta"));
+                                                                                //Console.WriteLine((String)jExamen.GetValue("Pregunta"));
 
                                                                                 if (jExamen.ContainsKey("Respuestas"))
                                                                                 {
