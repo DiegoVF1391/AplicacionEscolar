@@ -56,17 +56,15 @@ namespace TAP2021_U1T_Escuela
             try
             {
                 StreamReader sr = new StreamReader("registros.json");
-                //archivo de las preguntas 
-                StreamReader sr2 = new StreamReader("Reticulas2.json");
                 String lectura = sr.ReadToEnd();
-                String lectura2 = sr2.ReadToEnd();
+                
                 sr.Close();
-                sr2.Close();
+               
 
                 json = JObject.Parse(lectura);
-                JObject json2 = JObject.Parse(lectura2);
+               
 
-                if (json2.ContainsKey("Reticula")) { MessageBox.Show("Si hay archivo");}
+               
 
                 if (json.ContainsKey("registros"))
                 {
