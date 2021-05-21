@@ -17,6 +17,8 @@ namespace TAP2021_U1T_Escuela
     //ya se agrego el json...
     public partial class FormPrincipal : Form
     {
+        public String materiaExamen;
+
         private JObject json;
         private JObject jsonRegistros;
         private JObject jsonAlumnos;
@@ -86,11 +88,8 @@ namespace TAP2021_U1T_Escuela
                             {
                                 JObject m = (JObject)materias[i];
                                 comboBox1.Items.Add(m.GetValue("Nombre"));
-
                             }
-
                         }
-                        
                     }
                 }
 
@@ -112,8 +111,16 @@ namespace TAP2021_U1T_Escuela
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //materiaExamen = comboBox1.SelectedIndex.ToString();
             //boton para entrar al formulario de examen, validar que se haya seleccionado 1 materia...
-
+            /*if (materiaExamen != null)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una materia");
+            }*/
             new FormExamen().Show();
         }
 

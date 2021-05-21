@@ -25,6 +25,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         private JArray jcarreras;
         private JObject jcarrera;
         private JArray jsemestre;
+        private JObject jse;
 
         //guardar semestre y carrera
         private String car;
@@ -112,9 +113,20 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                     {
                                         jsemestre = (JArray)jcarrera.GetValue("Semestres");
                                         //MessageBox.Show(jsemestre.ToString());
-                                        //revisar carreras y que el "numero" coincida con "sem"
                                         
-
+                                        //revisar carreras y que el "numero" coincida con "sem"
+                                        for (int i = 0; i < jsemestre.Count; i++)
+                                        {
+                                            jse = (JObject)jsemestre[i];
+                                            if (jse.ContainsKey("Numero"))
+                                            {
+                                                if (sem == int.Parse(jse.GetValue("Numero").ToString()))
+                                                {
+                                                    MessageBox.Show("Valor "+ sem);
+                                                }
+                                            }
+                                        }
+                                        
                                     }
 
                                 }
