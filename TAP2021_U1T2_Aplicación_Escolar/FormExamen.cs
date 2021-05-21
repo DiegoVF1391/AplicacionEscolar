@@ -153,7 +153,8 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                             if (jExamen.ContainsKey("Pregunta"))
                                                                             {
                                                                                 MessageBox.Show("Test");
-                                                                                label1.Text = (string)jExamen.GetValue("Pregunta");
+                                                                                label1.Text = (String)jExamen.GetValue("Pregunta");
+                                                                                
                                                                             }
                                                                         }
                                                                     }
