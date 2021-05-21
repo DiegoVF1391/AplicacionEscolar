@@ -36,8 +36,8 @@ namespace TAP2021_U1T2_Aplicación_Escolar
 
 
         //guardar semestre, respuesta y carrera
-        private String car, respuestaCorrecta;
-        private int sem;
+        private  String car, inciso, respuestaCorrecta;
+        private  int sem, cont=0, numRespuestas = 0;
 
 
         //Formulario para hacer examen de acreditación
@@ -149,17 +149,16 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                         
                                                                         jaExamenes = (JArray)jMateriaEx.GetValue("Examen");
                                                                         MessageBox.Show("Tiene "+jaExamenes.Count.ToString());
-                                                                        while ()
-                                                                        {
-
-                                                                        }
-                                                                        for (int l = 0; l < jaExamenes.Count; l++)
-                                                                        {
-                                                                            jExamen = (JObject)jaExamenes[l];
+                                                                        
+                                                                        
+                                                                            jExamen = (JObject)jaExamenes[cont];
                                                                             if (jExamen.ContainsKey("Pregunta"))
                                                                             {
+                                                                                label1.Text = "";
+                                                                                comboBox1.Items.Clear();
+
                                                                                 label1.Text = (String)jExamen.GetValue("Pregunta");
-                                                                                respuestaCorrecta = (String)jExamen.GetValue("Correcta");
+                                                                                inciso = (String)jExamen.GetValue("Correcta");
                                                                                 Console.WriteLine((String)jExamen.GetValue("Pregunta"));
 
                                                                                 if (jExamen.ContainsKey("Respuestas"))
@@ -170,15 +169,16 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                                         jPreguntaEx = (JObject)jaPreguntas[m];
                                                                                         if (jPreguntaEx.ContainsKey("Texto"))
                                                                                         {
-                                                                                            comboBox1.Items.Add(jPreguntaEx.GetValue("Inciso")+") "+jPreguntaEx.GetValue("Texto"));
+                                                                                            comboBox1.Items.Add(jPreguntaEx.GetValue("Inciso") + ") " + jPreguntaEx.GetValue("Texto"));
+                                                                                            if (jPreguntaEx.GetValue("Inciso").ToString().Equals(inciso))
+                                                                                            {
+                                                                                                respuestaCorrecta = jPreguntaEx.GetValue("Inciso") + ") " + jPreguntaEx.GetValue("Texto");
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                 }
                                                                             }
-                                                                            else{
-                                                                                Console.WriteLine("No entro");
-                                                                            }
-                                                                        }
+                                                                        
                                                                     }
                                                                 }
                                                             }
@@ -203,5 +203,62 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                 throw;
             }
         }
+
+        //Cada vez que se presiona el boton, califica la respuesta y muestra la siguiente pregunta
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.Equals(respuestaCorrecta))
+            {
+                numRespuestas += 10;
+                MessageBox.Show(numRespuestas.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Incorrecto");
+            }
+            cont++;
+            pregunta();
+        }
+
+        //Se hace el proceso para mostrar la respuesta y pregunta
+        private void pregunta()
+        {
+            if (cont < 10)
+            {
+                jExamen = (JObject)jaExamenes[cont];
+                if (jExamen.ContainsKey("Pregunta"))
+                {
+                    label1.Text = "";
+                    comboBox1.Items.Clear();
+                    label1.Text = (String)jExamen.GetValue("Pregunta");
+                    inciso = (String)jExamen.GetValue("Correcta");
+                    Console.WriteLine((String)jExamen.GetValue("Pregunta"));
+
+                    if (jExamen.ContainsKey("Respuestas"))
+                    {
+                        jaPreguntas = (JArray)jExamen.GetValue("Respuestas");
+                        for (int m = 0; m < jaPreguntas.Count; m++)
+                        {
+                            jPreguntaEx = (JObject)jaPreguntas[m];
+                            if (jPreguntaEx.ContainsKey("Texto"))
+                            {
+                                comboBox1.Items.Add(jPreguntaEx.GetValue("Inciso") + ") " + jPreguntaEx.GetValue("Texto"));
+                                if (jPreguntaEx.GetValue("Inciso").ToString().Equals(inciso))
+                                {
+                                    respuestaCorrecta = jPreguntaEx.GetValue("Inciso") + ") " + jPreguntaEx.GetValue("Texto");
+                                }
+                                Console.WriteLine(inciso);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usted obtuvo "+ numRespuestas);
+            }
+        }
+
+        
     }
 }

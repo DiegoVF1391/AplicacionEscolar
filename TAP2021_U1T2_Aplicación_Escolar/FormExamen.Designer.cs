@@ -60,7 +60,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(20, 133);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(560, 24);
             this.comboBox1.TabIndex = 2;
@@ -68,12 +68,13 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(229, 273);
+            this.btnSiguiente.Location = new System.Drawing.Point(244, 266);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(106, 49);
             this.btnSiguiente.TabIndex = 3;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // FormExamen
             // 
