@@ -14,6 +14,7 @@ using TAP2021_U1T2_Aplicación_Escolar;
 
 namespace TAP2021_U1T_Escuela
 {
+    //ya se agrego el json...
     public partial class FormPrincipal : Form
     {
         private JObject json;
