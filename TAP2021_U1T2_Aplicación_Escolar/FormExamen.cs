@@ -17,11 +17,5 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         {
             InitializeComponent();
         }
-
-        private void FormExamen_Load(object sender, EventArgs e)
-        {
-
-
-        }
     }
 }
