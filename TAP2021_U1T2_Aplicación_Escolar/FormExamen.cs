@@ -336,8 +336,44 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                 }
                             }
 
+                            jalumno.Remove("Materias");
+                            jalumno.Add("Materias", jcalifs);
+
+                            
+
+                            jregistros.Remove("alumnos");
+                            jregistros.Add("alumnos", jalumnos);
+
+                            json.Remove("registros");
+                            json.Add("registros", jregistros);
+
+                            //Guardar el archivo 
+                            try
+                            {
+                                StreamWriter sw = new StreamWriter("registros.json", false);
+                                sw.Write(json.ToString());
+                                sw.Close();
+
+                                MessageBox.Show("Registro éxitoso");
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error "+ex);
+                                MessageBox.Show("No se pudo guardar el registro..");
+                                throw;
+                            }
+
+
+
+
+
+
+
+
 
                         }
+
                     }
 
 
