@@ -38,6 +38,8 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         //guardar semestre, respuesta y carrera
         private  String car, inciso, respuestaCorrecta;
         private  int sem, cont=0, numRespuestas = 0;
+        private String materiaCalif;
+
 
 
         //Formulario para hacer examen de acreditación
@@ -144,6 +146,8 @@ namespace TAP2021_U1T2_Aplicación_Escolar
                                                                 //MessageBox.Show(jMateriaEx.GetValue("Nombre").ToString());
                                                                 if (jMateriaEx.GetValue("Nombre").ToString().Equals(FormPrincipal.materiaExamen.ToString()))
                                                                 {
+                                                                    //guardar nombre de la materia...
+                                                                    materiaCalif = jMateriaEx.GetValue("Nombre").ToString();
                                                                     if (jMateriaEx.ContainsKey("Examen"))
                                                                     {
                                                                         
@@ -256,9 +260,99 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             else
             {
                 MessageBox.Show("Usted obtuvo "+ numRespuestas);
+                calificarExamen(numRespuestas);
             }
         }
 
-        
+
+        //Calificar la materia con el examen....
+        public void calificarExamen(int calif)
+        {
+            json = new JObject();
+            JArray jalumnos;
+            JArray jcalifs;
+
+
+            try
+            {
+                StreamReader sr = new StreamReader("registros.json");
+                String leer = sr.ReadToEnd();
+                sr.Close();
+
+                json = JObject.Parse(leer);
+
+                if (json.ContainsKey("registros"))
+                {
+                    jregistros = (JObject)json.GetValue("registros");
+
+                    //MessageBox.Show(jregistros.ToString());
+                    if (jregistros.ContainsKey("alumnos"))
+                    {
+                        jalumnos = (JArray)jregistros.GetValue("alumnos");
+                        //MessageBox.Show(jalumnos.ToString());
+                        //buscar el alumno 
+
+                        for (int i = 0; i < jalumnos.Count; i++)
+                        {
+                            jalumno = (JObject)jalumnos[i];
+
+
+                            if (jalumno.ContainsKey("Nombre"))
+                            {
+                                //elegir el alumno en jobjeto
+                                jalumno = (JObject)jalumnos[Form1.indice];
+
+
+                            }
+
+                        }
+
+                        String nombre = jalumno.GetValue("Nombre").ToString();
+                       
+                        //MessageBox.Show(jalumno.ToString());
+
+                        if (jalumno.ContainsKey("Materias"))
+                        {
+                            jcalifs = (JArray)jalumno.GetValue("Materias");
+                            //MessageBox.Show("funciona ");
+                            //                                llenar grid 
+                            for (int j = 0; j < jcalifs.Count; j++)
+                            {
+                                JObject a = (JObject)jcalifs[j];
+                                if (a.ContainsKey("Nombre"))
+                                {
+                                    if (a.GetValue("Nombre").ToString().Equals(materiaCalif))
+                                    {
+                                        if (a.ContainsKey("Calificación")) 
+                                        {
+                                            // MessageBox.Show("si jala calificacion");
+                                            a.Remove("Calificación");
+                                            a.Add("Calificación",numRespuestas);
+                                            MessageBox.Show("Calificacion asignada..");
+                                            //guardar archivo json 
+                                        }
+                                        
+                                    }
+                                }
+                            }
+
+
+                        }
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+                MessageBox.Show("Error al leer el archivo");
+                throw;
+            }
+
+
+        }
     }
+
 }
