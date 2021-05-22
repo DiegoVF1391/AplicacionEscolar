@@ -211,17 +211,20 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         //Cada vez que se presiona el boton, califica la respuesta y muestra la siguiente pregunta
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.Equals(respuestaCorrecta))
+            if (! comboBox1.SelectedIndex.ToString().Equals("-1"))
             {
-                numRespuestas += 10;
-                MessageBox.Show(numRespuestas.ToString());
+                if (comboBox1.SelectedItem.Equals(respuestaCorrecta))
+                {
+                    numRespuestas += 10;
+                }
+                cont++;
+                pregunta();
             }
             else
             {
-                MessageBox.Show("Incorrecto");
+                MessageBox.Show("Selecciona una respuesta");
             }
-            cont++;
-            pregunta();
+            
         }
 
         //Se hace el proceso para mostrar la respuesta y pregunta
