@@ -229,6 +229,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
         {
             if (cont < 10)
             {
+                comboBox1.Items.Remove(comboBox1.SelectedItem);
                 jExamen = (JObject)jaExamenes[cont];
                 if (jExamen.ContainsKey("Pregunta"))
                 {

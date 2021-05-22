@@ -111,17 +111,17 @@ namespace TAP2021_U1T_Escuela
 
         private void button1_Click(object sender, EventArgs e)
         {
-            materiaExamen = comboBox1.SelectedItem.ToString();
+            
             //boton para entrar al formulario de examen, validar que se haya seleccionado 1 materia...
-            /*if (materiaExamen != null)
+            if (!comboBox1.SelectedIndex.ToString().Equals("-1"))
             {
-                
+                materiaExamen = comboBox1.SelectedItem.ToString();
+                new FormExamen().Show();
             }
             else
             {
-                MessageBox.Show("Selecciona una materia");
-            }*/
-            new FormExamen().Show();
+                MessageBox.Show("Selecciona una materia para hacer el examen");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
