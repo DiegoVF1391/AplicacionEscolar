@@ -265,6 +265,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             {
                 MessageBox.Show("Usted obtuvo "+ numRespuestas);
                 calificarExamen(numRespuestas);
+                this.Dispose();
             }
         }
 
