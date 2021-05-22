@@ -48,11 +48,11 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(13, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 34);
+            this.label1.Size = new System.Drawing.Size(191, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "1.- Pregunta: ";
             // 
@@ -62,14 +62,14 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(18, 127);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(1227, 29);
+            this.comboBox1.Size = new System.Drawing.Size(1362, 29);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Respuestas...";
             // 
             // btnSiguiente
             // 
             this.btnSiguiente.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.Location = new System.Drawing.Point(452, 199);
+            this.btnSiguiente.Location = new System.Drawing.Point(495, 193);
             this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(165, 40);
@@ -83,7 +83,7 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1279, 370);
+            this.ClientSize = new System.Drawing.Size(1436, 370);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
