@@ -155,6 +155,7 @@ namespace TAP2021_U1T_Escuela
             this.Controls.Add(this.btnCalificaciones);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);

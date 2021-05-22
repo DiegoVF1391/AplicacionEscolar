@@ -39,38 +39,40 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             // 
             this.labelMateria.AutoSize = true;
             this.labelMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMateria.Location = new System.Drawing.Point(181, 9);
-            this.labelMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMateria.Location = new System.Drawing.Point(136, 7);
             this.labelMateria.Name = "labelMateria";
-            this.labelMateria.Size = new System.Drawing.Size(280, 29);
+            this.labelMateria.Size = new System.Drawing.Size(223, 24);
             this.labelMateria.TabIndex = 0;
             this.labelMateria.Text = "Nombre de la Materia: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(13, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(211, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "1.- Pregunta: ";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("MS Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(20, 133);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(18, 127);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(560, 24);
+            this.comboBox1.Size = new System.Drawing.Size(1227, 29);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Respuestas...";
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(244, 266);
+            this.btnSiguiente.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(452, 199);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(106, 49);
+            this.btnSiguiente.Size = new System.Drawing.Size(165, 40);
             this.btnSiguiente.TabIndex = 3;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -78,15 +80,17 @@ namespace TAP2021_U1T2_Aplicación_Escolar
             // 
             // FormExamen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 430);
+            this.BackColor = System.Drawing.Color.Beige;
+            this.ClientSize = new System.Drawing.Size(1279, 370);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelMateria);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormExamen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormExamen";
             this.Load += new System.EventHandler(this.FormExamen_Load);
             this.ResumeLayout(false);
